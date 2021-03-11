@@ -18,10 +18,17 @@
         //   width:"1000px"
         // },2000)
         
+        // $(".wrap .ipt").keypress(function(event){
+        //   var value = event.key;
+        //   $(".wrap .print").text(value);
+        // });
+
         $(".wrap .ipt").keypress(function(event){
+          // console.log(event.key);
           var value = event.key;
           $(".wrap .print").text(value);
-        });
+
+        })
       });
 
       
