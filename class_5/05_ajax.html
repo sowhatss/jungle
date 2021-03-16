@@ -13,7 +13,7 @@
 	</style>
 	<script>
 		$(function () {
-			var loadData;//json 데이터를 담는 변수
+			var loadData;//json 데이터를 담는 변수 그래서 나중에 result는 변수로 정한 json 데이터가 결과물로 나오는 것
 			
 			$(".btn_intro").click(function(){
 				$(this).hide();
@@ -22,10 +22,11 @@
 				$.ajax({
 					url:"js/data.json",
 					dataType:"json",
-					success:function(result){
-						loadData = result;
-						for(var i=0; i<loadData.seatInfo.length;i++){
-							$(".container .list > ul").append('<li class="unit"><button>버튼</button></li>')
+					success:function(result){ //성공하게 되면 result라고 우리가 정한 값이 나온다
+						loadData = result;  //우리가 정한 result=위에서 변수로 정한 로드데이터랑 같다
+						for(var i=0; i<loadData.seatInfo.length;i++){  //i<loadData.seatInfo.length; = json 데이터가 11개 들어가 있어서 변수 11개까지 한다는 뜻
+							$(".container .list > ul").append('<li class="unit"><button data-price="'+loadData.seatInfo[i].price+'">'+loadData.seatInfo[i].name+'</button></li>')
+							//seatInfo는 배열이다 i라는 변수를 불러오는데 그중에서 json파일에 name 정보를 가져온다 (순서대로) , 버튼안에data-price=""형식을 가져오는데 json 파일에서 가격가져오는거니까 ''으로해서 가져옴
 						}
 					}
 				})

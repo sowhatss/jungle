@@ -24,3 +24,10 @@
 .container{
 	padding:40px;
 }
+
+.container .map{
+	width: 500px;
+	height: 400px;
+	background: #666;
+	margin: 0 auto;
+}
