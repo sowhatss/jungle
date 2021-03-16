@@ -13,7 +13,18 @@
 
 	<script>
 		$(function () {
-
+			$(".section.box > ul").bxSlider({
+				minSlides:3,
+				maxSlides:3,
+				moveSlides:1,
+				slideWidth: "330px",
+				pager:false,
+				controls:true,
+				auto:true,
+				pause:2000,
+				speed:100
+				// mode:"fade"
+			});
 		})
 	</script>
 

@@ -1,40 +1,68 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>repl.it</title>
-    <link href="css/reset.css" rel="stylesheet" type="text/css" />
-		<link href="css/04_append.css" rel="stylesheet" type="text/css" />
-		<script src="js/jquery-1.8.3.min.js"></script>
-		<style>
-			
-		</style>
-		<script>
-			$(function(){
 
-			})
-		</script>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>repl.it</title>
+	<link href="css/reset.css" rel="stylesheet" type="text/css" />
+	<link href="css/04_append.css" rel="stylesheet" type="text/css" />
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<style>
 
-  </head>
-  <body>
-    <div class="wrap">
+	</style>
+	<script>
+		$(function () {
+			//어팬드 기본작동법
+			// $(".container").append("<strong>append 추가</strong>")
 
-			<div class="header">
+			//목록에 버튼 추가
+			// $(".container .list > ul").append("<li class='unit'><button>추가된 버튼</button></li>");
+
+			for(var i= 0; i<10; i++){
+				// $(".container .list > ul").append("<li class='unit'><button>추가된 버튼</button></li>")
+			}
+			//인트로 버튼 클릭시 10개의 버튼 추가 이벤트/ 인트로버튼 (자신) 숨김처리
+			$(".btn_intro").click(function(){
+				//동작 마크업 추가
+				for(var i= 0; i<10; i++){
+				$(".container .list > ul").append('<li class="unit"><button>버튼'+(i+1)+'</button></li>');
+				}
+
+				//자신(this=btn_intro) 숨김처리
+				$(this).hide();
+			});
+		})
+	</script>
+
+</head>
+
+<body>
+	<div class="wrap">
+
+		<div class="header">
 			<h1>logo</h1>
 			<div class="nav">
 				<a href="#">menu1</a>
 				<a href="#">menu2</a>
 				<a href="#">menu3</a>
 			</div>
-    </div>
+		</div>
 		<div class="container">
-				
-    </div>
+			<div class="section intro">
+				<button class="btn_intro">버튼추가</button>
+			</div>
+			<div class="section list">
+				<ul>
+					
+				</ul>
+			</div>
+		</div>
 		<div class="footer">
 			footer
 		</div>
 
-		
-  </body>
+
+</body>
+
 </html>

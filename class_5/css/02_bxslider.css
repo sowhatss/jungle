@@ -32,6 +32,12 @@
 	padding:0 10px;
 }
 
+.section.box .bx-wrapper{
+	box-shadow: none;
+	background: transparent;
+	border: none;
+}
+
 .footer{
 	height:50px;
 	background:#777;
