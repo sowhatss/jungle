@@ -1,3 +1,11 @@
+.section{
+	display: none;
+}
+
+.section.on{
+	display: block;
+}
+
 .box_intro{
 	padding:30px 0;
 	text-align: center;
@@ -34,7 +42,6 @@
 	display: block;
 	height:100px;
 	width:100px;
-	line-height: 100px;
 	text-align: center;
 	background:#91c170;
 	color: #fff;
@@ -47,10 +54,10 @@
 .section.reservation .unit button[disabled],
 .section.reservation .unit button[disabled]:hover
 {
-  background:#BABABA url(../img/img_disabled.png) no-repeat;
+  background:#BABABa url(../img/img_disabled.png) no-repeat;
   background-size:100% 100%;
-  text-indent: -9999px;
-  cursor:default;
+  text-indent: -9999px; /*텍스트 숨김처리 font-size: 0; 도 되지만 보이스로 안됨!*/
+  cursor:default; /*커서모양(기본화살표)*/
 }
 .section.reservation .unit button.select{
 	background: #FF5F40;
