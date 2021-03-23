@@ -101,7 +101,7 @@
     html, body {
         height: 100%;
     }
-    .warp{
+    .wrap{
         width: auto;
         height: 100%;
         border: none;
@@ -111,7 +111,7 @@
         height: calc(100% - 135px);
     }
     .chat_A .item .box .msg{
-        font-size: 17px;
+        font-size: 15px;
     }
     .input_A > input[type="text"]{
         height: 50px;
