@@ -1,0 +1,119 @@
+.wrap{
+    border:1px solid #999;
+    width: 300px;
+    padding: 5px;
+    box-sizing: border-box;
+    font-size: 13px;
+    color: #333;
+}
+
+/*****채팅창영역 ******/
+.chat_A{
+    height: 350px;
+    background-color: #acc2d2;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-y: auto;  /*overflow는 지정범위 이상이되면 어떻게 할거냐*/
+    overflow-y: hidden;
+}
+
+/* 말풍선 메세지 영역 */
+.chat_A .item + .item{
+    margin-top: 15px;
+}
+.chat_A .item.mymsg{
+    text-align: right;
+}
+
+/* 말풍선 */
+.chat_A .item .box{
+    display: inline-block;
+    max-width: 180px;
+    position: relative;
+}
+/* 가상선택자 만듦(말풍선 꼬리부분(삼각형))css에서 꾸며줌 https://css-tricks.com/snippets/css/css-triangle/*/
+.chat_A .item .box::before{
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 0 solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid white;
+    position: absolute;
+    left: -8px;
+    top:9px
+}
+
+.chat_A .item.mymsg .box::before{
+    border-right: 0px;
+    border-left: 8px solid yellow;
+    left: auto;
+    right: -8px;
+}
+
+/* 말풍선 */
+.chat_A .item .box .msg{
+    background-color: #fff;
+    padding: 8px;
+    border-radius: 8px;
+}
+.chat_A .item.mymsg .box .msg{
+    background-color: yellow;
+}
+
+.chat_A .item .box .time{
+    position: absolute;
+    right: -75px;
+    width: 70px;
+    bottom: 3px;
+    font-size: 11px;
+    color: #999;
+
+}.chat_A .item.mymsg .box .time{
+    right: auto;
+    left: -75px;
+}
+
+/***** 입력창영역 *****/
+.input_A{
+    margin-top: 5px;
+}
+.input_A > input[type="text"]{
+    width: 100%;
+    box-sizing: border-box; /*패딩을넘어도박스안에들어가게 */
+    /* css 박스모델  position, margin, border, padding, content <border>의 상관관계! 내가 이해못하는거 ㅠ */
+    border: 0;
+    background-color: #ddd;
+    height: 30px;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+.input_A > input[type="text"]+input[type="text"]{
+    margin-top: 5px;
+}
+.input_A > input[type="text"]::placeholder{
+    color: forestgreen;
+}
+
+/* ****모바일 영역**** */
+@media all and (max-width:768px){
+    html, body {
+        height: 100%;
+    }
+    .warp{
+        width: auto;
+        height: 100%;
+        border: none;
+        font-size: 15px;
+    }
+    .chat_A{
+        height: calc(100% - 135px);
+    }
+    .chat_A .item .box .msg{
+        font-size: 17px;
+    }
+    .input_A > input[type="text"]{
+        height: 50px;
+    }
+}
