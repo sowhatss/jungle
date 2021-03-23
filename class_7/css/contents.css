@@ -117,3 +117,18 @@
         height: 50px;
     }
 }
+
+/*****말풍선 입력시 애니메이션 처리******/
+.chat_A .item {
+    opacity: 0;
+    transition: all 0.3s;
+    transform: translateX(-30px);
+}
+.chat_A .item.on{
+    opacity: 1;
+    transform: translateX(0) !important;
+}
+.chat_A .item.mymsg {
+    transition: all 0.3s;
+    transform: translateX(30px);
+}
